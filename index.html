@@ -1,304 +1,228 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>John Doe - Software Developer</title>
-  <script src="https://cdn.tailwindcss.com "></script>
+  <title>YourCVOnline</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com  "></script>
   <style>
-    .glass-effect {
-      background: rgba(255, 255, 255, 0.7);
-      backdrop-filter: blur(10px);
-      border-radius: 1rem;
-      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-      border: 1px solid rgba(255, 255, 255, 0.3);
-    }
-
-    .glass-effect-dark {
-      background: rgba(255, 255, 255, 0.05);
-      backdrop-filter: blur(10px);
-      border-radius: 1rem;
-      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    .fade-in {
-      opacity: 0;
-      animation: fadeIn 0.6s ease-out forwards;
-    }
-
-    [data-section] {
-      animation-delay: calc(0.2s * var(--delay));
-    }
-
-    body.dark-mode {
-      background-color: #111827;
-      color: #f3f4f6;
-    }
-
-    body.dark-mode h1,
-    body.dark-mode h2,
-    body.dark-mode h3,
-    body.dark-mode p,
-    body.dark-mode li,
-    body.dark-mode span,
-    body.dark-mode a {
-      color: #f3f4f6 !important;
-    }
-
-    body.dark-mode .glass-effect {
-      background: rgba(255, 255, 255, 0.05);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      backdrop-filter: blur(10px);
-    }
-
-    body.dark-mode .glass-effect-dark {
-      background: rgba(255, 255, 255, 0.05);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      backdrop-filter: blur(10px);
-    }
-
-    body.dark-mode .bg-gradient-to-br.from-blue-50.via-purple-50.to-indigo-50 {
-      background: linear-gradient(to bottom right, #1e293b, #334155, #475569);
-    }
-
-    body.dark-mode .text-gray-800 {
-      color: #f3f4f6;
-    }
-
-    body.dark-mode .text-gray-600 {
-      color: #d1d5db;
-    }
-
-    body.dark-mode .border-gray-200 {
-      border-color: #374151;
-    }
-
-    body.dark-mode .bg-white {
-      background-color: #1f2937 !important;
-    }
-
-    body.dark-mode .glass-effect p,
-    body.dark-mode .glass-effect li,
-    body.dark-mode .glass-effect span,
-    body.dark-mode .glass-effect a {
-      color: #e5e7eb !important;
-    }
-
-    body.dark-mode .glass-effect h3 {
-      color: #f3f4f6 !important;
+    body {
+      font-family: system-ui, sans-serif;
     }
   </style>
 </head>
-<body class="bg-gray-100 text-gray-800 font-sans min-h-screen transition-colors duration-300">
-
-  <!-- Dark Mode Toggle -->
-  <div class="absolute top-4 right-4 z-50">
-    <button id="darkModeToggle" class="p-2 rounded-full bg-gray-800 text-yellow-300 hover:bg-gray-700 transition" aria-label="Toggle dark mode">
-      <svg id="moonIcon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-      </svg>
-      <svg id="sunIcon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="hidden">
-        <circle cx="12" cy="12" r="5"></circle>
-        <line x1="12" y1="1" x2="12" y2="3"></line>
-        <line x1="12" y1="21" x2="12" y2="23"></line>
-        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
-        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
-        <line x1="1" y1="12" x2="3" y2="12"></line>
-        <line x1="21" y1="12" x2="23" y2="12"></line>
-        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
-        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
-      </svg>
-    </button>
+<body class="bg-white text-gray-800 antialiased">
+  <div class="font-sans bg-white">
+    <!-- Header -->
+    <header class="bg-white shadow-sm sticky top-0 z-50 transition-all duration-300">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center py-5">
+          <div class="flex items-center space-x-2">
+            <svg class="w-8 h-8 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path d="M9 12h6m-6 4h6m-6-8h6M3 12a9 9 0 1118 0 9 9 0 01-18 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" />
+            </svg>
+            <span class="text-xl font-bold text-gray-900">YourCVOnline</span>
+          </div>
+          <nav class="hidden md:flex space-x-8">
+            <a href="#about" class="text-gray-600 hover:text-indigo-600 relative group">
+              About
+              <span class="absolute left-0 bottom-0 w-full h-0.5 bg-indigo-600 scale-x-0 group-hover:scale-x-100 origin-left transition-transform"></span>
+            </a>
+            <a href="#how-it-works" class="text-gray-600 hover:text-indigo-600 relative group">
+              How It Works
+              <span class="absolute left-0 bottom-0 w-full h-0.5 bg-indigo-600 scale-x-0 group-hover:scale-x-100 origin-left transition-transform"></span>
+            </a>
+            <a href="#examples" class="text-gray-600 hover:text-indigo-600 relative group">
+              Examples
+              <span class="absolute left-0 bottom-0 w-full h-0.5 bg-indigo-600 scale-x-0 group-hover:scale-x-100 origin-left transition-transform"></span>
+            </a>
+            <a href="#pricing" class="text-gray-600 hover:text-indigo-600 relative group">
+              Pricing
+              <span class="absolute left-0 bottom-0 w-full h-0.5 bg-indigo-600 scale-x-0 group-hover:scale-x-100 origin-left transition-transform"></span>
+            </a>
+            <a href="#contact" class="text-gray-600 hover:text-indigo-600 relative group">
+              Contact
+              <span class="absolute left-0 bottom-0 w-full h-0.5 bg-indigo-600 scale-x-0 group-hover:scale-x-100 origin-left transition-transform"></span>
+            </a>
+          </nav>
+          <a href="#contact" class="hidden md:inline-block px-5 py-2 rounded-md bg-indigo-600 text-white font-medium hover:bg-indigo-700 hover:shadow-lg transform hover:-translate-y-0.5 transition-all duration-200">
+            Get Started
+          </a>
+        </div>
+      </div>
+    </header>
+    <!-- Hero Section -->
+    <section class="py-20 bg-gradient-to-br from-indigo-50 to-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center">
+        <div class="md:w-1/2 mb-10 md:mb-0">
+          <h1 class="text-4xl md:text-5xl font-extrabold text-gray-900 leading-tight">
+            Your Personal CV, Online in Minutes
+          </h1>
+          <p class="mt-6 text-lg text-gray-600 max-w-lg">
+            I'll turn your resume into a stunning personal website — custom built just for you.
+          </p>
+          <div class="mt-8 flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+            <a href="#contact" class="px-6 py-3 bg-indigo-600 text-white font-medium rounded-md hover:bg-indigo-700 hover:shadow-lg transform hover:-translate-y-1 transition-all duration-200">
+              Build My CV Website
+            </a>
+            <a href="#examples" class="px-6 py-3 border border-gray-300 text-gray-700 font-medium rounded-md hover:bg-gray-50 hover:shadow hover:border-indigo-300 transform hover:-translate-y-1 transition-all duration-200">
+              See Examples
+            </a>
+          </div>
+        </div>
+        <div class="md:w-1/2">
+          <img src="https://placehold.co/600x400/indigo/white?text=Personal+CV+Website  " alt="CV Website Preview" class="rounded-lg shadow-lg w-full" />
+        </div>
+      </div>
+    </section>
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-white">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h2 class="text-3xl font-bold text-gray-900">I Create Beautiful Personal CV Websites</h2>
+        <p class="mt-6 text-lg text-gray-600">
+          Hi! I'm a web designer who specializes in turning resumes into sleek, modern, mobile-friendly personal websites. No templates, no AI — just hand-coded designs tailored to your style and experience.
+        </p>
+        <div class="mt-10 grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div class="bg-gray-50 p-6 rounded-lg shadow-sm hover:shadow-lg transition-shadow">
+            <h3 class="text-xl font-semibold text-gray-900">No Templates</h3>
+            <p class="mt-2 text-gray-600">Each site is designed from scratch, not based on any template.</p>
+          </div>
+          <div class="bg-gray-50 p-6 rounded-lg shadow-sm hover:shadow-lg transition-shadow">
+            <h3 class="text-xl font-semibold text-gray-900">Hand-Crafted</h3>
+            <p class="mt-2 text-gray-600">Every line of code is written by me — with care and attention to detail.</p>
+          </div>
+          <div class="bg-gray-50 p-6 rounded-lg shadow-sm hover:shadow-lg transition-shadow">
+            <h3 class="text-xl font-semibold text-gray-900">Fast & Responsive</h3>
+            <p class="mt-2 text-gray-600">Your site will look great on phones, tablets, and desktops.</p>
+          </div>
+          <div class="bg-gray-50 p-6 rounded-lg shadow-sm hover:shadow-lg transition-shadow">
+            <h3 class="text-xl font-semibold text-gray-900">Easy to Update</h3>
+            <p class="mt-2 text-gray-600">I make updates easy — just send me what you'd like changed!</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- How It Works Section -->
+    <section id="how-it-works" class="py-20 bg-gray-50">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h2 class="text-3xl font-bold text-gray-900">How It Works</h2>
+        <p class="mt-4 text-lg text-gray-600">It’s simple — here’s how we bring your resume online:</p>
+        <div class="mt-12 space-y-8">
+          <div class="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow">
+            <div class="w-10 h-10 bg-indigo-100 text-indigo-600 rounded-full flex items-center justify-center mx-auto mb-4 font-bold">1</div>
+            <h3 class="text-lg font-semibold">Send Me Your Resume</h3>
+            <p class="mt-2 text-gray-600">Share your resume and any specific preferences you have.</p>
+          </div>
+          <div class="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow">
+            <div class="w-10 h-10 bg-indigo-100 text-indigo-600 rounded-full flex items-center justify-center mx-auto mb-4 font-bold">2</div>
+            <h3 class="text-lg font-semibold">Design Phase</h3>
+            <p class="mt-2 text-gray-600">I’ll design your website and send you a preview for feedback.</p>
+          </div>
+          <div class="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow">
+            <div class="w-10 h-10 bg-indigo-100 text-indigo-600 rounded-full flex items-center justify-center mx-auto mb-4 font-bold">3</div>
+            <h3 class="text-lg font-semibold">Go Live</h3>
+            <p class="mt-2 text-gray-600">After final approval, your personal CV site goes live online.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Example Sites Section -->
+    <section id="examples" class="py-20 bg-white">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl font-bold text-gray-900">Example CV Websites</h2>
+          <p class="mt-4 text-lg text-gray-600">Check out some of the websites I've created recently.</p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <a href="https://thenetwork1ng.github.io/CVJohndoe/ " target="_blank" rel="noopener noreferrer" class="block">
+            <div class="bg-gray-50 rounded-lg overflow-hidden shadow-sm hover:shadow-lg transition-shadow">
+              <img src="https://placehold.co/800x500/indigo/white?text=CV+Site+1  " alt="CV Site 1" class="w-full h-48 object-cover" />
+              <div class="p-6">
+                <h3 class="text-xl font-semibold text-gray-900">John Doe - Software Developer</h3>
+                <p class="mt-2 text-gray-600">A minimal, modern tech-focused CV site.</p>
+              </div>
+            </div>
+          </a>
+          <div class="bg-gray-50 rounded-lg overflow-hidden shadow-sm hover:shadow-lg transition-shadow">
+            <img src="https://placehold.co/800x500/purple/white?text=CV+Site+2  " alt="CV Site 2" class="w-full h-48 object-cover" />
+            <div class="p-6">
+              <h3 class="text-xl font-semibold text-gray-900">Sarah Lee - Graphic Designer</h3>
+              <p class="mt-2 text-gray-600">A creative portfolio-style CV site with project showcases.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Pricing Section -->
+    <section id="pricing" class="py-20 bg-gray-50">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h2 class="text-3xl font-bold text-gray-900">Simple Pricing</h2>
+        <p class="mt-4 text-lg text-gray-600">One flat rate — no hidden fees, no monthly costs.</p>
+        <div class="mt-10 bg-white p-8 rounded-lg shadow-md inline-block">
+          <h3 class="text-2xl font-bold text-gray-900">Starting at $199</h3>
+          <ul class="mt-6 space-y-3 text-gray-600 text-left max-w-xs mx-auto">
+            <li class="flex items-start">
+              <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+              </svg>
+              Fully custom design
+            </li>
+            <li class="flex items-start">
+              <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+              </svg>
+              Mobile responsive layout
+            </li>
+            <li class="flex items-start">
+              <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+              </svg>
+              Hosting included
+            </li>
+            <li class="flex items-start">
+              <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+              </svg>
+              One year of free updates
+            </li>
+          </ul>
+          <div class="mt-8">
+            <a href="#contact" class="inline-block px-6 py-3 bg-indigo-600 text-white font-medium rounded-md hover:bg-indigo-700 hover:shadow-lg transform hover:-translate-y-1 transition-all duration-200">
+              Book Now
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-white">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h2 class="text-3xl font-bold text-gray-900">Let’s Work Together</h2>
+        <p class="mt-4 text-lg text-gray-600">Get in touch and we can start building your personal CV website today.</p>
+        <!-- Embedded Tally Form -->
+        <div class="mt-10 flex justify-center">
+          <iframe 
+            src="https://tally.so/embed/wLgVby?transparentBackground=1&dynamicHeight=1  "
+            loading="lazy" 
+            width="100%" 
+            frameborder="0" 
+            marginheight="0" 
+            marginwidth="0" 
+            height="200" 
+            class="w-full max-w-xl rounded-lg shadow-md border border-gray-200"
+          >
+            Loading…
+          </iframe>
+        </div>
+      </div>
+    </section>
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-8">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <p>&copy; {new Date().getFullYear()} YourCVOnline. Handcrafted by You.</p>
+      </div>
+    </footer>
   </div>
-
-  <!-- Hero Section -->
-  <header class="bg-gradient-to-r from-blue-600 to-purple-600 text-white py-16 px-6 md:px-12 text-center relative overflow-hidden">
-    <div class="absolute inset-0 opacity-10 pointer-events-none">
-      <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
-        <defs>
-          <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
-            <path d="M 40 0 L 0 0 0 40" fill="none" stroke="white" stroke-width="0.5" />
-          </pattern>
-        </defs>
-        <rect width="100%" height="100%" fill="url(#grid)" />
-      </svg>
-    </div>
-    <h1 class="text-5xl md:text-6xl font-extrabold mb-2 tracking-tight">John Doe</h1>
-    <p class="text-lg md:text-xl opacity-90">Senior Software Developer | Johannesburg, South Africa</p>
-
-    <div class="flex justify-center gap-5 mt-6">
-      <a href="mailto:john.doe@email.com" class="hover:scale-110 transform transition duration-300 text-2xl" title="Email">✉️</a>
-      <a href="https://github.com/johndoe " target="_blank" rel="noopener noreferrer" class="hover:scale-110 transform transition duration-300 text-2xl" title="GitHub">🐙</a>
-      <a href="https://linkedin.com/in/johndoe " target="_blank" rel="noopener noreferrer" class="hover:scale-110 transform transition duration-300 text-2xl" title="LinkedIn">💼</a>
-      <a href="https://www.johndoe.dev " target="_blank" rel="noopener noreferrer" class="hover:scale-110 transform transition duration-300 text-2xl" title="Portfolio">🌐</a>
-    </div>
-
-    <!-- Resume Download Button -->
-    <div class="mt-8">
-      <a href="/resume.pdf" download class="inline-block bg-white text-blue-600 font-semibold py-2 px-6 rounded shadow hover:bg-gray-100 transition">
-        📄 Download Resume
-      </a>
-    </div>
-  </header>
-
-  <!-- Summary -->
-  <section data-section style="--delay: 1" class="max-w-3xl mx-auto p-6 md:p-10 glass-effect fade-in mt-8">
-    <h2 class="text-2xl font-semibold border-b border-gray-200 pb-2 mb-4">Professional Summary</h2>
-    <p class="leading-relaxed text-gray-700">
-      Highly motivated and detail-oriented Software Developer with over 5 years of experience designing, developing,
-      and deploying scalable web applications. Proficient in full-stack development with a strong foundation in both
-      front-end and back-end technologies. A collaborative team player passionate about writing clean code and
-      delivering high-quality software solutions.
-    </p>
-  </section>
-
-  <!-- Skills -->
-  <section data-section style="--delay: 2" class="py-10 px-6 md:px-10 mt-8">
-    <h2 class="text-2xl font-semibold border-b border-gray-200 pb-2 mb-6 text-center">Technical Skills</h2>
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
-      <div class="glass-effect p-5 rounded-lg shadow hover:shadow-lg transition-shadow fade-in">
-        <h3 class="font-medium text-gray-800">Languages:</h3>
-        <p class="text-gray-600">JavaScript, Python, Java, TypeScript, SQL</p>
-      </div>
-      <div class="glass-effect p-5 rounded-lg shadow hover:shadow-lg transition-shadow fade-in">
-        <h3 class="font-medium text-gray-800">Front-End:</h3>
-        <p class="text-gray-600">React.js, HTML5, CSS3, Bootstrap, Redux</p>
-      </div>
-      <div class="glass-effect p-5 rounded-lg shadow hover:shadow-lg transition-shadow fade-in">
-        <h3 class="font-medium text-gray-800">Back-End:</h3>
-        <p class="text-gray-600">Node.js, Express.js, Django, Flask</p>
-      </div>
-      <div class="glass-effect p-5 rounded-lg shadow hover:shadow-lg transition-shadow fade-in">
-        <h3 class="font-medium text-gray-800">Databases:</h3>
-        <p class="text-gray-600">PostgreSQL, MongoDB, MySQL</p>
-      </div>
-      <div class="glass-effect p-5 rounded-lg shadow hover:shadow-lg transition-shadow fade-in">
-        <h3 class="font-medium text-gray-800">DevOps Tools:</h3>
-        <p class="text-gray-600">Docker, Git, GitHub Actions, AWS (EC2, S3, Lambda)</p>
-      </div>
-      <div class="glass-effect p-5 rounded-lg shadow hover:shadow-lg transition-shadow fade-in">
-        <h3 class="font-medium text-gray-800">Other:</h3>
-        <p class="text-gray-600">RESTful APIs, Agile/Scrum, TDD, CI/CD</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Experience -->
-  <section data-section style="--delay: 3" class="max-w-3xl mx-auto p-6 md:p-10 mt-8">
-    <h2 class="text-2xl font-semibold border-b border-gray-200 pb-2 mb-6">Professional Experience</h2>
-
-    <div class="mb-8 glass-effect p-6 rounded-lg shadow hover:shadow-xl transition-shadow fade-in">
-      <h3 class="text-xl font-semibold">Senior Software Developer</h3>
-      <p class="text-gray-600">TechNova Inc., Johannesburg — Jan 2022 – Present</p>
-      <ul class="list-disc list-inside mt-2 text-gray-700 space-y-1">
-        <li>Led the development of a cloud-based CRM platform used by 500+ businesses.</li>
-        <li>Collaborated with cross-functional teams to define technical requirements and deliver features on schedule.</li>
-        <li>Implemented microservices architecture using Node.js and Docker.</li>
-        <li>Integrated third-party services like Stripe, Twilio, and Google Maps API.</li>
-        <li>Mentored junior developers and conducted code reviews.</li>
-      </ul>
-    </div>
-
-    <div class="glass-effect p-6 rounded-lg shadow hover:shadow-xl transition-shadow fade-in">
-      <h3 class="text-xl font-semibold">Software Developer</h3>
-      <p class="text-gray-600">InnovateX Solutions, Johannesburg — Jun 2019 – Dec 2021</p>
-      <ul class="list-disc list-inside mt-2 text-gray-700 space-y-1">
-        <li>Developed responsive UI components using React and Redux.</li>
-        <li>Built and maintained RESTful APIs using Python and Django.</li>
-        <li>Participated in daily standups and sprint planning under Agile methodology.</li>
-        <li>Improved application performance by optimizing database queries (30% faster load times).</li>
-        <li>Wrote unit and integration tests to ensure code quality.</li>
-      </ul>
-    </div>
-  </section>
-
-  <!-- Education & Certifications -->
-  <section id="educationSection" data-section style="--delay: 4" class="py-10 px-6 md:px-10 mt-8 rounded-lg">
-    <h2 class="text-2xl font-semibold border-b border-gray-200 pb-2 mb-6 text-center">Education & Certifications</h2>
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
-      <div id="eduCard" class="glass-effect p-5 rounded-lg shadow fade-in">
-        <h3 class="font-semibold text-gray-800">Bachelor of Science in Computer Science</h3>
-        <p class="text-gray-600">University of Cape Town — Graduated: 2019</p>
-      </div>
-      <div id="certCard" class="glass-effect p-5 rounded-lg shadow fade-in">
-        <h3 class="font-semibold text-gray-800">Certifications</h3>
-        <ul class="text-gray-600 space-y-1">
-          <li>AWS Certified Developer – Associate (2023)</li>
-          <li>Google IT Automation with Python Professional Certificate (2021)</li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <!-- Projects -->
-  <section data-section style="--delay: 5" class="max-w-3xl mx-auto p-6 md:p-10 mt-8">
-    <h2 class="text-2xl font-semibold border-b border-gray-200 pb-2 mb-6">Projects</h2>
-
-    <div class="mb-6 glass-effect p-6 rounded-lg shadow hover:shadow-xl transition-shadow fade-in">
-      <h3 class="text-xl font-semibold">TaskFlow – Productivity Web App</h3>
-      <p class="text-gray-600">Personal Project</p>
-      <p class="mt-2 text-gray-700">
-        A full-stack task management app built with React, Node.js, and PostgreSQL. Features include user authentication,
-        drag-and-drop interface, and real-time notifications.
-      </p>
-      <p class="text-sm text-gray-500 mt-1">Technologies: React, Express.js, PostgreSQL, Socket.IO</p>
-    </div>
-
-    <div class="glass-effect p-6 rounded-lg shadow hover:shadow-xl transition-shadow fade-in">
-      <h3 class="text-xl font-semibold">OpenSource Contributions</h3>
-      <p class="mt-2 text-gray-700">
-        Contributor to open-source projects on GitHub including bug fixes, documentation improvements,
-        and feature enhancements for popular developer tools.
-      </p>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer class="bg-white border-t border-gray-200 p-6 text-center text-sm text-gray-500 mt-10">
-    Built with <span class="text-red-500">❤️</span> by <span class="font-semibold text-gray-700">Andre the networKING</span>
-  </footer>
-
-  <!-- Dark Mode Script -->
-  <script>
-    const toggle = document.getElementById('darkModeToggle');
-    const body = document.body;
-    const moonIcon = document.getElementById('moonIcon');
-    const sunIcon = document.getElementById('sunIcon');
-
-    // Target elements manually for better control
-    const educationSection = document.getElementById('educationSection');
-    const eduCard = document.getElementById('eduCard');
-    const certCard = document.getElementById('certCard');
-
-    toggle.addEventListener('click', () => {
-      body.classList.toggle('dark-mode');
-
-      // Toggle icons
-      moonIcon.classList.toggle('hidden');
-      sunIcon.classList.toggle('hidden');
-
-      // Manually apply dark styles to problematic sections
-      if (body.classList.contains('dark-mode')) {
-        educationSection.style.background = '#111827'; // Match the main dark background
-        eduCard.classList.remove('glass-effect');
-        eduCard.classList.add('glass-effect-dark');
-        certCard.classList.remove('glass-effect');
-        certCard.classList.add('glass-effect-dark');
-      } else {
-        educationSection.style.background = ''; // Reset to light mode
-        eduCard.classList.remove('glass-effect-dark');
-        eduCard.classList.add('glass-effect');
-        certCard.classList.remove('glass-effect-dark');
-        certCard.classList.add('glass-effect');
-      }
-    });
-  </script>
-
 </body>
 </html>
